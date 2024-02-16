@@ -98,3 +98,8 @@ Port : 3307
 username: root
 password: root
 ```
+
+And that is it.
+
+Thank you for visiting. Also have a look at this document for the answers regarding these tasks.
+https://docs.google.com/document/d/1CXqgyXbxhXcyrD8-8G_6HcMj0erh_TtN-z_fpMMP5GU/edit?usp=sharing 
