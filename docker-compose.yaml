@@ -1,0 +1,45 @@
+services:
+  mysql:
+    container_name: mysql
+    restart: unless-stopped
+    build:
+      dockerfile: ./docker/mysql/Dockerfile
+    volumes:
+      - ./docker/mysql/db.sql:/docker-entrypoint-initdb.d/db.sql
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_ROOT_USER=${MYSQL_ROOT_USER}
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
+
+  api:
+    container_name: api
+    build:
+      dockerfile: ./docker/php/Dockerfile
+      context: .
+      args:
+        user: user
+        uid: 1000
+    volumes:
+      - ./api:/var/www
+    depends_on:
+      - mysql
+      - redis
+
+  nginx:
+    container_name: nginx
+    build:
+      dockerfile: ./docker/nginx/Dockerfile
+    volumes:
+      - ./docker/nginx:/var/www
+    ports:
+      - "9000:80"  
+    depends_on:
+      - api
