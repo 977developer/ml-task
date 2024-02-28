@@ -1,6 +1,6 @@
 ## Introduction
 
-This is a web app that uses docker with custom php framework api, mysql and nginx. For front end it uses angular.
+This is a web app that uses docker with custom php framework api, mysql, redis and nginx. For front-end it uses angular.
 
 Run the following commands to build.
 
