@@ -1,6 +1,9 @@
 ## Introduction
 
+This is a web app that uses docker with custom php framework api, mysql and nginx. For front end it uses angular.
+
 Run the following commands to build.
+
 ```
 docker compose build
 docker compose up
@@ -100,6 +103,3 @@ password: root
 ```
 
 And that is it.
-
-Thank you for visiting. Also have a look at this document for the answers regarding these tasks.
-https://docs.google.com/document/d/1CXqgyXbxhXcyrD8-8G_6HcMj0erh_TtN-z_fpMMP5GU/edit?usp=sharing 
