@@ -67,6 +67,13 @@ To test the application :
 ```
 docker compose exec api composer test
 ```
+
+You can also seed users : 
+
+```
+docker compose exec api composer seed
+```
+
 ## Redis
 
 It implements Redis as primary database. Data is always fetched from Redis, if it is not found, it is queried to MySQL and saved to Redis.
